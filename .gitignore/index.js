@@ -15,7 +15,7 @@ var staff = (".");
 
 
 
-client.on('message', message => {
+bot.on('message', message => {
 
     if(message.content === "Bonjour"){
         message.reply('Hello');
