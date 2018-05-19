@@ -280,7 +280,7 @@ bot.on('message', message => {
 
 /////////////////////////////////////////////////MUSIQUE////////////////////////////////////////////////////////
 
-client.login('NDMxODc4MTMxNDU2OTMzODg5.DcJiFw.0uhqMJfknMKFvRlg0nuV4UrZAOY');
+
 
 client.on('message', message => {
   
@@ -322,4 +322,4 @@ client.on('message', message => {
 
 })
 
-bot.login('NDMxODc4MTMxNDU2OTMzODg5.DcJiFw.0uhqMJfknMKFvRlg0nuV4UrZAOY');
+bot.login(process.env.TOKEN);
