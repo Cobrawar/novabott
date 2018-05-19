@@ -1,0 +1,16 @@
+{
+  "name": "novabott",
+  "version": "1.0.0",
+  "description": "Bot discord pour le serveur [Nova]",
+  "main": "main.js",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "ffmpeg-binaries": "^3.2.2-3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cobrawar",
+  "license": "ISC"
+}
