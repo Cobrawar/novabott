@@ -139,7 +139,7 @@ bot.on('message', message => {
         var kick_embed = new Discord.RichEmbed()
         if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have the permission !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an user");
+            return message.channel.send("You need to mention an @user");
         }
         var kick = message.guild.member(message.mentions.users.first());
         if(!kick) {
@@ -159,7 +159,7 @@ bot.on('message', message => {
     if(message.content.startsWith(staff + "ban")) {
         if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("You don't have the permission !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an user");
+            return message.channel.send("You need to mention an @user");
         }
         var ban = message.guild.member(message.mentions.users.first());
         if(!ban) {
@@ -177,7 +177,7 @@ bot.on('message', message => {
     if(message.content.startsWith(staff + "mute")) {
         if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.channel.send("You don't have the permission !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an user");
+            return message.channel.send("You need to mention an @user");
         }
         var mute = message.guild.member(message.mentions.users.first());
         if(!mute) {
