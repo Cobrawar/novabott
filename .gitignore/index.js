@@ -282,7 +282,7 @@ bot.on('message', message => {
 
 
 
-client.on('message', message => {
+bot.on('message', message => {
   
   if (!message.guild) return;
 
