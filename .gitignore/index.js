@@ -35,7 +35,7 @@ bot.on('message', message => {
     bot.user.setAvatar('./bot.png')
         .then (() => console.log('Avatar succesfull'))
         .catch(console.error)
-    bot.user.setGame('Développement')
+    bot.user.setGame('!help')
         .catch(console.error)
 
 
