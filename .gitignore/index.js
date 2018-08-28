@@ -227,6 +227,27 @@ bot.on('message', message => {
         
         message.delete();
     }
+    
+    
+    if(message.content.startsWith(staff + "unmute")) {
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have the permission !");
+        if(message.mentions.users.size === 0) {
+            return message.channel.send("You need to mention an @user");
+        }
+        var mute = message.guild.member(message.mentions.users.first());
+        if(!mute) {
+            return message.channel.send("I don't know if the user exist");
+        }
+        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")){
+            return message.channel.send("I don't have the permission for mute user");
+        }
+        if(!message.guild.memeber(client.user).hasPerimission("ADMINISTRATOR")) return message.channel.send("I don't have the permission !");
+        message.channel.overwritePermissions(mute, { SEND_MESSAGE: true}).then(member => {
+            message.channel.send(`${mute.user.username} is now unmute !`);
+        });
+        
+        message.delete();
+    }
 
     if(message.content.startsWith(staff + "clear")) {
         if(!message.guild.member(message.author).hasPermission("CLEAR_MEMBERS")) return message.channel.send("You don't have the permission !");
