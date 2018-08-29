@@ -159,6 +159,7 @@ bot.on('message', message => {
         .setColor("#40A497")
         .setTitle("Candidature")
         .addField ("Candidatire demandée avec succès, posteée là ! ")
+        message.channel.sendMessage(candidature_embed);
         message.delete();
     }
 
