@@ -54,7 +54,7 @@ bot.on('message', message => {
         .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]")
         .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]")
         .addField("B **-REGLEMENT SALON TEXTUELS**")
-        .addField("")
+      
 
         
         message.channel.sendMessage(regles_embed);
