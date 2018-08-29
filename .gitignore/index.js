@@ -153,6 +153,12 @@ bot.on('message', message => {
         message.delete();
 
     }
+    
+    if (message.content === prefix + "candidature") {
+        var candidature_embed = new Discord.RichEmbed()
+        .setColor("#40A497")
+        .setTitle("Candidature demandée avec succès ! Postée la ")
+    }
 
     if (message.content === prefix + "pt") {
         var pt_embed = new Discord.RichEmbed()
