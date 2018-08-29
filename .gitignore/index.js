@@ -157,7 +157,9 @@ bot.on('message', message => {
     if (message.content === prefix + "candidature") {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        .setTitle("Candidature demandée avec succès ! Postée la ")
+        .setTitle("Candidature")
+        .addField ("Candidatire demandée avec succès, posteée là ! ")
+        message.delete();
     }
 
     if (message.content === prefix + "pt") {
