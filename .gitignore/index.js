@@ -44,16 +44,16 @@ bot.on('message', message => {
     if (message.content === prefix + "regles") {
         var regles_embed = new Discord.RichEmbed()
         .setColor("#FF5733")
-        .setTitle("A **-REGLEMENT GENERALE**")
-        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]")
-        .addField("[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]")
-        .addField("[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]")
-        .addField("[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]")
-        .addField("[5. Ne pas tenir de propos religieux, politique]")
-        .addField("[6. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
-        .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]")
-        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]")
-        .addField("B **-REGLEMENT SALON TEXTUELS**")
+        .setTitle("`A` **-REGLEMENT GENERALE**")
+        .addField("[`1`. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]")
+        .addField("[`2`. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]")
+        .addField("[`3`. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]")
+        .addField("[`4`. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]")
+        .addField("[`5`. Ne pas tenir de propos religieux, politique]")
+        .addField("[`6`. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
+        .addField("[`7`. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]")
+        .addField("[`8`. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]")
+        .addField("`B` **-REGLEMENT SALON TEXTUELS**")
       
 
         
