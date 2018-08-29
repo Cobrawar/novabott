@@ -52,6 +52,7 @@ bot.on('message', message => {
         .addField("4.   En cas de problèmes, en vers un membres (nimporte quel grade), soucis 	technique ; appeller un Modérateur ou plus dans le channel aide-plainte puis attendez dans le channel vocal HELP ou les consigner du gradé.")
         .addField("5.   Tout images ou liens innapropriés (+18 ou non comforme aux règles) sera immédiatement sanctionner par un tempban minimum et supprrimé.")
         .addField("6.   Tout envoie de vidéo est interdit sauf pour la musique dans le salon spécifique (Musique) ---> réservé aux VIP ou plus ")
+        .addBlankField('ss')
         message.channel.sendMessage(regles_embed);
         message.delete();
     }
