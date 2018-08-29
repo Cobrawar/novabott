@@ -43,15 +43,19 @@ bot.on('message', message => {
 
     if (message.content === prefix + "regles") {
         var regles_embed = new Discord.RichEmbed()
-        .setColor("#40A497")
-        .setTitle("Les règles :")
-        .setDescription("Ou avoir le document complet ici : http://www.mediafire.com/file/hln0gs5qh1bbtc1/R%C3%A8gles.odt")
-        .addField("1.   Pas de propos raciste, sexiste ou même discriminants, les insultes, flood, spam compris.")
-        .addField("2.   Pour les problémes : ne pas le résoudre seul mais appeller un plus haut grader (Helper, Admin, Modo, Fondateur).")
-        .addField("3.   Toutes sanctions appliquées par un Admin ou plus sont à respecters mais peuvent être discutés")
-        .addField("4.   En cas de problèmes, en vers un membres (nimporte quel grade), soucis 	technique ; appeller un Modérateur ou plus dans le channel aide-plainte puis attendez dans le channel vocal HELP ou les consigner du gradé.")
-        .addField("5.   Tout images ou liens innapropriés (+18 ou non comforme aux règles) sera immédiatement sanctionner par un tempban minimum et supprrimé.")
-        .addField("6.   Tout envoie de vidéo est interdit sauf pour la musique dans le salon spécifique (Musique) ---> réservé aux VIP ou plus ")
+        .setColor("#FF5733")
+        .setTitle("A **-REGLEMENT GENERALE**")
+        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]")
+        .addField("[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]")
+        .addField("[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]")
+        .addField("[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]")
+        .addField("[5. Ne pas tenir de propos religieux, politique]")
+        .addField("[6. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
+        .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]")
+        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]")
+        .addField("B **-REGLEMENT SALON TEXTUELS**")
+        .addField("")
+
         
         message.channel.sendMessage(regles_embed);
         message.delete();
