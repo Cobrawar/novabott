@@ -95,6 +95,49 @@ bot.on('message', message => {
         message.channel.sendMessage(help_embed);
         message.delete();
     }
+    
+    
+if (message.content === prefix + regle){
+    var regle_embed = new Discord.RichEmbed()
+    .setColor("#FF5733")
+
+    message.channel.send({embed: {
+        color: 3447003,
+        author: {
+          name: client.user.username,
+          icon_url: client.user.avatarURL
+        },
+        title: "REGLEMENNT",
+        url: "",
+        description: "",
+        fields: [{
+            name: "__**A -REGLEMENT GENERALE**__",
+            value: "[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]"
+            
+          },
+          {
+            name: "",
+            value: "[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]"
+          },
+          {
+            name: "",
+            value: "[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]"
+          },
+          {
+            name: "",
+            value:"[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]"
+          }
+
+
+        ],
+        timestamp: new Date(),
+        footer: {
+          icon_url: client.user.avatarURL,
+          text: "© REGLEMENT"
+        }
+      }
+    });
+}
 
     if (message.content === prefix + "aide") {
         var aide_embed = new Discord.RichEmbed()
