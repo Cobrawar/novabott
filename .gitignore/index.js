@@ -97,9 +97,7 @@ bot.on('message', message => {
     }
     
     
-if (message.content === prefix + regle){
-    var regle_embed = new Discord.RichEmbed()
-    .setColor("#FF5733")
+
 
     message.channel.send({embed: {
         color: 3447003,
@@ -137,7 +135,7 @@ if (message.content === prefix + regle){
         }
       }
     });
-}
+
 
     if (message.content === prefix + "aide") {
         var aide_embed = new Discord.RichEmbed()
