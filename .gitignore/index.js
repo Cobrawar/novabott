@@ -40,7 +40,7 @@ bot.on('message', message => {
 
 
 //////////////////////////////////////////////////COMMANDES//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+if (message.content === prefix + "regle") {
     const embed = new Discord.RichEmbed()
   .setTitle("This is your title, it can hold 256 characters")
   .setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
@@ -70,7 +70,9 @@ bot.on('message', message => {
   .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
 
   message.channel.send({embed});
-    
+  
+        message.delete();
+}
     
     
     if (message.content === prefix + "regles") {
