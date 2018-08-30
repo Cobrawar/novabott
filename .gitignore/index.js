@@ -41,8 +41,8 @@ bot.on('message', message => {
 
 //////////////////////////////////////////////////COMMANDES//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    if (message.content === prefix + "regles") {
-        const embed = new Discord.RichEmbed()
+      if (message.content === prefix + "regles") {
+        const regles_embed = new Discord.RichEmbed()
       .setTitle("**REGLEMENT**")
       .setAuthor("Cobrawar", "")
       /*
@@ -94,7 +94,7 @@ bot.on('message', message => {
       .addBlankField(true)
       
     
-      message.channel.send({embed});
+      message.channel.send({regles_embed});
       
             message.delete();
     }
