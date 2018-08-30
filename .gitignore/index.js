@@ -41,8 +41,41 @@ bot.on('message', message => {
 
 //////////////////////////////////////////////////COMMANDES//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-      if (message.content === prefix + "regles") {
-        const regles_embed = new Discord.RichEmbed()
+       if (message.content === prefix + "aregles") {
+        var aregles_embed = new Discord.RichEmbed()
+        .setColor("#FF5733")
+
+         .setTitle("__**A -REGLEMENT GENERALE**__")
+        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]")
+        .addField("[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]")
+        .addField("[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]")
+        .addField("[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]")
+        .addField("[5. Ne pas tenir de propos religieux, politique]")
+        .addField("[6. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
+        .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]")
+        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]")
+
+        .addField("__**B -REGLEMENT SALON TEXTUELS**__")
+        .addField("[1. Le spam, flood, et messages d'inusltes, grossiertées ne sont pas tolérés]")
+        .addField("[2. Ne pas abuser des majuscules !]")
+        .addField("[3. Le partage de musique (lien) sont autorisé seulement dans le salon musique]")
+        .addField("[4. Pas de publicitées (marques, chaînes....), (la mention est autorisé mais pas la pub)]")
+        .addField("[5. Ne pas spammer les commandes des bots]")
+        .addField("[6. Le salon Musique (VIP+) est réservé aux musiques ajouters au bot MUSIQUE, **PAS AILLEURS**] ")
+
+        .addField("__**C -REGLEMENT SALON VOCAUX**__")
+        .addField("[1. Pas de cris, éviter les grésillemnt ou autres bruits dérangants, les modificateurs de voix et soundboard son autorisés dans la **limite** du raisonnable]")
+        .addField("[2. Le changement de channel continu est **INTERDIT**]")
+        .addField("[3. Ne pas diffuser des contenus non appropriés à la règle A-6]")
+        
+        
+        message.channel.sendMessage(aregles_embed);
+        message.delete();   
+
+    }
+
+    if (message.content === prefix + "regles") {
+        var regles_embed = new Discord.RichEmbed()
       .setTitle("**REGLEMENT**")
       .setAuthor("Cobrawar", "")
       /*
@@ -94,41 +127,9 @@ bot.on('message', message => {
       .addBlankField(true)
       
     
-      message.channel.send({regles_embed});
+      message.channel.sendMessage(regles_embed);
       
             message.delete();
-    }
-    
-    if (message.content === prefix + "aregles") {
-        var regles_embed = new Discord.RichEmbed()
-        .setColor("#FF5733")
-
-        .setTitle("__**A -REGLEMENT GENERALE**__")
-        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]")
-        .addField("[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]")
-        .addField("[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]")
-        .addField("[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]")
-        .addField("[5. Ne pas tenir de propos religieux, politique]")
-        .addField("[6. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
-        .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]")
-        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]")
-
-        .addField("__**B -REGLEMENT SALON TEXTUELS**__")
-        .addField("[1. Le spam, flood, et messages d'inusltes, grossiertées ne sont pas tolérés]")
-        .addField("[2. Ne pas abuser des majuscules !]")
-        .addField("[3. Le partage de musique (lien) sont autorisé seulement dans le salon musique]")
-        .addField("[4. Pas de publicitées (marques, chaînes....), (la mention est autorisé mais pas la pub)]")
-        .addField("[5. Ne pas spammer les commandes des bots]")
-        .addField("[6. Le salon Musique (VIP+) est réservé aux musiques ajouters au bot MUSIQUE, **PAS AILLEURS**] ")
-
-        .addField("__**C -REGLEMENT SALON VOCAUX**__")
-        .addField("[1. Pas de cris, éviter les grésillemnt ou autres bruits dérangants, les modificateurs de voix et soundboard son autorisés dans la **limite** du raisonnable]")
-        .addField("[2. Le changement de channel continu est **INTERDIT**]")
-        .addField("[3. Ne pas diffuser des contenus non appropriés à la règle A-6]")
-        
-        
-        message.channel.sendMessage(regles_embed);
-        message.delete();
     }
 
     if (message.content === prefix + "help") {
