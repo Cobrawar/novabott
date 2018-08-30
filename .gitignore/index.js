@@ -40,42 +40,66 @@ bot.on('message', message => {
 
 
 //////////////////////////////////////////////////COMMANDES//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if (message.content === prefix + "regle") {
-    const embed = new Discord.RichEmbed()
-  .setTitle("This is your title, it can hold 256 characters")
-  .setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
-  /*
-   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-   */
-  .setColor(0x00AE86)
-  .setDescription("This is the main body of text, it can hold 2048 characters.")
-  .setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
-  .setImage("http://i.imgur.com/yVpymuV.png")
-  .setThumbnail("http://i.imgur.com/p2qNFag.png")
-  /*
-   * Takes a Date object, defaults to current date.
-   */
-  .setTimestamp()
-  .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-  .addField("This is a field title, it can hold 256 characters",
-    "This is a field value, it can hold 1024 characters.")
-  /*
-   * Inline fields may not display as inline if the thumbnail and/or image is too big.
-   */
-  .addField("Inline Field", "They can also be inline.", true)
-  /*
-   * Blank field, useful to create some space.
-   */
-  .addBlankField(true)
-  .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
 
-  message.channel.send({embed});
-  
-        message.delete();
-}
-    
-    
     if (message.content === prefix + "regles") {
+        const embed = new Discord.RichEmbed()
+      .setTitle("**REGLEMENT**")
+      .setAuthor("Cobrawar", "")
+      /*
+       * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+       */
+      .setColor(0x00AE86)
+      .setDescription("Ceci est le règlement du serveur :")
+      .setFooter("reglement by @cobrawar")
+      
+      
+      /*
+       * Takes a Date object, defaults to current date.
+       */
+      .setTimestamp()
+      
+      .addField("__**A -REGLEMENT GENERALE**__",
+        "[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]",
+        "[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]",
+        "[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]",
+        "[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]",
+        "[5. Ne pas tenir de propos religieux, politique]",
+        "[6. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié]",
+        "[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]",
+        "[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]",
+        
+    )
+     
+      .addField("__**B -REGLEMENT SALON TEXTUELS**__",
+      "[1. Le spam, flood, et messages d'inusltes, grossiertées ne sont pas tolérés]",
+      "[2. Ne pas abuser des majuscules !]",
+      "[3. Le partage de musique (lien) sont autorisé seulement dans le salon musique]",
+      "[4. Pas de publicitées (marques, chaînes....), (la mention est autorisé mais pas la pub)]",
+      "[5. Ne pas spammer les commandes des bots]",
+      "[6. Le salon Musique (VIP+) est réservé aux musiques ajouters au bot MUSIQUE, **PAS AILLEURS**]",
+
+    
+    )
+      
+      .addField("__**C -REGLEMENT SALON VOCAUX**__",
+      "[1. Pas de cris, éviter les grésillemnt ou autres bruits dérangants, les modificateurs de voix et soundboard son autorisés dans la **limite** du raisonnable]",
+      "[2. Le changement de channel continu est **INTERDIT**]",
+      "[3. Ne pas diffuser des contenus non appropriés à la règle A-6]",
+    
+    
+    )
+
+
+
+      .addBlankField(true)
+      
+    
+      message.channel.send({embed});
+      
+            message.delete();
+    }
+    
+    if (message.content === prefix + "aregles") {
         var regles_embed = new Discord.RichEmbed()
         .setColor("#FF5733")
 
