@@ -35,8 +35,9 @@ bot.on('message', message => {
     bot.user.setAvatar('./bot.png')
         .then (() => console.log('Avatar succesfull'))
         .catch(console.error)
-    bot.user.setGame('!help')
+    bot.user.setGame('Développement')
         .catch(console.error)
+
 
 //////////////////////////////////////////////////NOUVEAU MEMBRES////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -49,7 +50,7 @@ if (message.content.startsWith(prefix + "accept")) {
 
     membre.addRole(role).catch(console.error);
 
-    message.channel.send(`${membre} a accepté les règles et devient ${role}!`);
+    message.channel.send(`${membre} a accepté les règles, devient ${role}! et peut maintenant accéder au reste du serveur`);
 
     message.delete();
 }
@@ -60,25 +61,25 @@ if (message.content.startsWith(prefix + "accept")) {
 
 //////////////////////////////////////////////////COMMANDES//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-       if (message.content === prefix + "aregles") {
+    if (message.content === prefix + "aregles") {
         var aregles_embed = new Discord.RichEmbed()
         .setColor("#FF5733")
 
          .setTitle("__**A -REGLEMENT GENERALE**__")
-        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]")
-        .addField("[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]")
-        .addField("[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]")
-        .addField("[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]")
-        .addField("[5. Ne pas tenir de propos religieux, politique]")
-        .addField("[6. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
-        .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]")
-        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]")
+        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le grade de celui-ci)]")
+        .addField("[2. Les provocations, insitations ou manipulations envers n'importe quels membres est totalement **INTERDIT**]")
+        .addField("[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'information personnelle d'autrui **SANS** son accord est **INTERDIT**]")
+        .addField("[4. L'usurpation d'identitée, de menaces (hack, ou autres) est défendus]")
+        .addField("[5. Ne pas tenir de propos religieux, politique et tout sujets à débats]")
+        .addField("[6. Tout contenus (messages, pseudos, liens, vidéos, images, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
+        .addField("[7. Si un problème entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas ! (Sauf si le problème ce passe sur le serveur)]")
+        .addField("[8. Pour les problèmes : ne pas le résoudres **seul** mais appeler un plus haut grader (Helper, Admin, Modo, DEUS)]")
 
         .addField("__**B -REGLEMENT SALON TEXTUELS**__")
-        .addField("[1. Le spam, flood, et messages d'inusltes, grossiertées ne sont pas tolérés]")
+        .addField("[1. Le spam, flood, et messages d'inusltes, grossièretées ne sont pas tolérés]")
         .addField("[2. Ne pas abuser des majuscules !]")
-        .addField("[3. Le partage de musique (lien) sont autorisé seulement dans le salon musique]")
-        .addField("[4. Pas de publicitées (marques, chaînes....), (la mention est autorisé mais pas la pub)]")
+        .addField("[3. Le partage de musiques (liens) sont autorisés seulement dans le salon musique réservé aux VIP minimum]")
+        .addField("[4. Pas de publicitées (marques, chaînes....), (la mention est autorisée mais pas la pub)]")
         .addField("[5. Ne pas spammer les commandes des bots]")
         .addField("[6. Le salon Musique (VIP+) est réservé aux musiques ajouters au bot MUSIQUE, **PAS AILLEURS**] ")
 
@@ -97,17 +98,13 @@ if (message.content.startsWith(prefix + "accept")) {
         var regles_embed = new Discord.RichEmbed()
       .setTitle("**REGLEMENT**")
       .setAuthor("Cobrawar", "")
-      /*
-       * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-       */
+     
       .setColor(0x00AE86)
       .setDescription("Ceci est le règlement du serveur :")
       .setFooter("reglement by @cobrawar")
       
       
-      /*
-       * Takes a Date object, defaults to current date.
-       */
+    
       .setTimestamp()
       
       .addField("__**A -REGLEMENT GENERALE**__",
@@ -151,10 +148,11 @@ if (message.content.startsWith(prefix + "accept")) {
             message.delete();
     }
 
+
     if (message.content === prefix + "help") {
         var help_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        .setTitle("Commandes :")
+        .setTitle("**Commandes :**")
         .addField("1.   !regles")
         .addField("2.   !help")
         .addField("3.   !playlist")
@@ -164,20 +162,17 @@ if (message.content.startsWith(prefix + "accept")) {
         .addField("7.   !maj")
         .addField("9.   !discution")
         .addField("10.  !pt")
-        .addField("Commandes Admin :")
+        .addField("11.  !candidature")
+        .addField("**Commandes Admin :**")
         .addField("1.   .kick @pseudo  ---> réservé au grade Admin ou plus ")
         .addField("2.   .ban @pseudo  ---> réservé au grade Admin ou plus ")
-        .addField("3.  .mute @pseudo  ---> réservé au grade Admin ou plus")
-        .addField("4.  .clear @pseudo ---> réservé au grade Admin ou plus")
+        .addField("3.   .mute @pseudo / .unmute @pseudo  ---> réservé au grade Admin ou plus")
+        .addField("4.   .clear @pseudo ---> réservé au grade Admin ou plus")
         
         
         message.channel.sendMessage(help_embed);
         message.delete();
     }
-    
-    
-
-
 
     if (message.content === prefix + "aide") {
         var aide_embed = new Discord.RichEmbed()
@@ -185,7 +180,7 @@ if (message.content.startsWith(prefix + "accept")) {
         .setTitle("Aide :")
         .addField("Besoin d'aide ?")
         .addField("1° Demandez de l'aide dans le salon écrit aide-plainte et attendez une réponse de la part d'un gradé")
-        .addField("2° Suivez la procédure demander")
+        .addField("2° Suivez la procédure demandée")
         message.channel.sendMessage(aide_embed);
         message.delete();
         
@@ -195,9 +190,9 @@ if (message.content.startsWith(prefix + "accept")) {
         var playlist_embed = new Discord.RichEmbed()
         .setColor("#40A497")
         .setTitle("Les différentes Playlists :")
-        .addField("Cobrawar (tout) : https://open.spotify.com/user/cobrawar/playlist/0Id4qeWtenUD3puIUBAZ5W?si=EomHqtLPSOe_Lx77IML6Jw")
-        .addField("Miradyn (rap) : https://open.spotify.com/user/thomas77780/playlist/5bV0Cc9VjWpVpoRCQMt4HV?si=3SCH0FgtQH-tz7VucVpk2A")
-        .addField("PowerGaming (Cool) : https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX6taq20FeuKj?si=WgNUWwrwS-SHN2tlfsovVQ")
+        .addField("Cobrawar  : https://open.spotify.com/user/cobrawar/playlist/0Id4qeWtenUD3puIUBAZ5W?si=EomHqtLPSOe_Lx77IML6Jw")
+        .addField("Miradyn  : https://open.spotify.com/user/thomas77780/playlist/5bV0Cc9VjWpVpoRCQMt4HV?si=3SCH0FgtQH-tz7VucVpk2A")
+        .addField("PowerGaming  : https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX6taq20FeuKj?si=WgNUWwrwS-SHN2tlfsovVQ")
         message.channel.sendMessage(playlist_embed);
         message.delete();
     }
@@ -248,18 +243,10 @@ if (message.content.startsWith(prefix + "accept")) {
         .setColor("#40A497")
         .setTitle("Discution :")
         .addField("Le channel Discustion est là pour discuter de tout et de rien sans embrouilles en respectant les règles!")
+      
         message.channel.sendMessage(chat_embed);
         message.delete();
 
-    }
-    
-    if (message.content === prefix + "candidature") {
-        var candidature_embed = new Discord.RichEmbed()
-        .setColor("#40A497")
-        .setTitle("**Candidature : **")
-        .addField ("Candidature demandée avec succès, posteée là ! ")
-        message.channel.sendMessage(candidature_embed);
-        message.delete();
     }
 
     if (message.content === prefix + "pt") {
@@ -273,6 +260,12 @@ if (message.content.startsWith(prefix + "accept")) {
         if(message.mentions.users.size === 1) {
             
         }
+    }
+
+    if (message.content === prefix + "candidature") {
+        var candidature_embed = new Discord.RichEmbed()
+        .setColor("#40A497")
+        .setTitle("Candidature demandée avec succès ! Postée la ")
     }
    
 ///////////////////////////////////////////////////COMMANDES STAFF/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -335,8 +328,7 @@ if (message.content.startsWith(prefix + "accept")) {
         
         message.delete();
     }
-    
-    
+
     if(message.content.startsWith(staff + "unmute")) {
         if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have the permission !");
         if(message.mentions.users.size === 0) {
@@ -345,7 +337,7 @@ if (message.content.startsWith(prefix + "accept")) {
         var mute = message.guild.member(message.mentions.users.first());
         if(!mute) {
             return message.channel.send("I don't know if the user exist");
-        }
+        }m
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")){
             return message.channel.send("I don't have the permission for mute user");
         }
@@ -374,6 +366,274 @@ if (message.content.startsWith(prefix + "accept")) {
     });
     message.delete();
 }
+
+var fs = require('fs');
+ 
+let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
+ 
+if (message.content.startsWith(staff + "warn")){
+ 
+if (message.channel.type === "dm") return;
+ 
+var mentionned = message.mentions.users.first();
+ 
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
+ 
+if(message.mentions.users.size === 0) {
+ 
+  return message.channel.send("**:x: Vous n'avez mentionnée aucun utilisateur**");
+ 
+}else{
+ 
+    const args = message.content.split(' ').slice(1);
+ 
+    const mentioned = message.mentions.users.first();
+ 
+    if (message.member.hasPermission('MANAGE_GUILD')){
+ 
+      if (message.mentions.users.size != 0) {
+ 
+        if (args[0] === "<@!"+mentioned.id+">"||args[0] === "<@"+mentioned.id+">") {
+ 
+          if (args.slice(1).length != 0) {
+ 
+            const date = new Date().toUTCString();
+ 
+            if (warns[message.guild.id] === undefined)
+ 
+              warns[message.guild.id] = {};
+ 
+            if (warns[message.guild.id][mentioned.id] === undefined)
+ 
+              warns[message.guild.id][mentioned.id] = {};
+ 
+            const warnumber = Object.keys(warns[message.guild.id][mentioned.id]).length;
+ 
+            if (warns[message.guild.id][mentioned.id][warnumber] === undefined){
+ 
+              warns[message.guild.id][mentioned.id]["1"] = {"raison": args.slice(1).join(' '), time: date, user: message.author.id};
+ 
+            } else {
+ 
+              warns[message.guild.id][mentioned.id][warnumber+1] = {"raison": args.slice(1).join(' '),
+ 
+                time: date,
+ 
+                user: message.author.id};
+ 
+            }
+ 
+            fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
+ 
+message.delete();
+ 
+            message.channel.send(':warning: | **'+mentionned.tag+' à été averti**');
+ 
+message.mentions.users.first().send(`:warning: **Warn |** depuis **${message.guild.name}** donné par **${message.author.username}**\n\n**Raison:** ` + args.slice(1).join(' '))
+ 
+          } else {
+ 
+            message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+ 
+          }
+ 
+        } else {
+ 
+          message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+ 
+        }
+ 
+      } else {
+ 
+        message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+ 
+      }
+ 
+    } else {
+ 
+      message.channel.send("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**");
+ 
+    }
+ 
+  }
+ 
+}
+ 
+ 
+ 
+  if (message.content.startsWith(staff+"seewarns")||message.content===prefix+"seewarns") {
+ 
+if (message.channel.type === "dm") return;
+ 
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
+ 
+    const mentioned = message.mentions.users.first();
+ 
+    const args = message.content.split(' ').slice(1);
+ 
+    if (message.member.hasPermission('MANAGE_GUILD')){
+ 
+      if (message.mentions.users.size !== 0) {
+ 
+        if (args[0] === "<@!"+mentioned.id+">"||args[0] === "<@"+mentioned.id+">") {
+ 
+          try {
+ 
+            if (warns[message.guild.id][mentioned.id] === undefined||Object.keys(warns[message.guild.id][mentioned.id]).length === 0) {
+ 
+              message.channel.send("**"+mentioned.tag+"** n'a aucun warn :eyes:");
+ 
+              return;
+ 
+            }
+ 
+          } catch (err) {
+ 
+            message.channel.send("**"+mentioned.tag+"** n'a aucun warn :eyes:");
+ 
+            return;
+ 
+          }
+ 
+          let arr = [];
+ 
+          arr.push(`**${mentioned.tag}** a **`+Object.keys(warns[message.guild.id][mentioned.id]).length+"** warns :eyes:");
+ 
+          for (var warn in warns[message.guild.id][mentioned.id]) {
+ 
+            arr.push(`**${warn}** - **"`+warns[message.guild.id][mentioned.id][warn].raison+
+ 
+            "**\" warn donné par **"+message.guild.members.find("id", warns[message.guild.id][mentioned.id][warn].user).user.tag+"** a/le **"+warns[message.guild.id][mentioned.id][warn].time+"**");
+ 
+          }
+ 
+          message.channel.send(arr.join('\n'));
+ 
+        } else {
+ 
+          message.channel.send("Erreur mauvais usage: "+staff+"seewarns <user> <raison>");
+ 
+          console.log(args);
+ 
+        }
+ 
+      } else {
+ 
+        message.channel.send("Erreur mauvais usage: "+staff+"seewarns <user> <raison>");
+ 
+      }
+ 
+    } else {
+ 
+      message.channel.send("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**");
+ 
+    }
+ 
+  }
+ 
+ 
+ 
+ 
+ 
+  if (message.content.startsWith(staff+"deletewarns")||message.content===prefix+"deletewarns") {
+ 
+if (message.channel.type === "dm") return;
+ 
+if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
+ 
+   const mentioned = message.mentions.users.first();
+ 
+    const args = message.content.split(' ').slice(1);
+ 
+    const arg2 = Number(args[1]);
+ 
+    if (message.member.hasPermission('MANAGE_GUILD')){
+ 
+      if (message.mentions.users.size != 0) {
+ 
+        if (args[0] === "<@!"+mentioned.id+">"||args[0] === "<@"+mentioned.id+">"){
+ 
+          if (!isNaN(arg2)) {
+ 
+            if (warns[message.guild.id][mentioned.id] === undefined) {
+ 
+              message.channel.send(mentioned.tag+" n'a aucun warn");
+ 
+              return;
+ 
+            } if (warns[message.guild.id][mentioned.id][arg2] === undefined) {
+ 
+              message.channel.send("**:x: Ce warn n'existe pas**");
+ 
+              return;
+ 
+            }
+ 
+            delete warns[message.guild.id][mentioned.id][arg2];
+ 
+            var i = 1;
+ 
+            Object.keys(warns[message.guild.id][mentioned.id]).forEach(function(key){
+ 
+              var val=warns[message.guild.id][mentioned.id][key];
+ 
+              delete warns[message.guild.id][mentioned.id][key];
+ 
+              key = i;
+ 
+              warns[message.guild.id][mentioned.id][key]=val;
+ 
+              i++;
+ 
+            });
+ 
+            fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
+ 
+            if (Object.keys(warns[message.guild.id][mentioned.id]).length === 0) {
+ 
+              delete warns[message.guild.id][mentioned.id];
+ 
+            }
+ 
+            message.channel.send(`Le warn de **${mentioned.tag}**\': **${args[1]}** a été enlevé avec succès!`);
+ 
+            return;
+ 
+          } if (args[1] === "tout") {
+ 
+            delete warns[message.guild.id][mentioned.id];
+ 
+            fs.writeFile("./warns.json", JSON.stringify(warns), (err) => {if (err) console.error(err);});
+ 
+            message.channel.send(`Les warns de **${mentioned.tag}** a été enlevé avec succès!`);
+ 
+            return;
+ 
+          } else {
+ 
+            message.channel.send("Erreur mauvais usage: "+staff+"clearwarns <utilisateur> <nombre>");
+ 
+          }
+ 
+        } else {
+ 
+          message.channel.send("Erreur mauvais usage: "+staff+"clearwarns <utilisateur> <nombre>");
+ 
+        }
+ 
+      } else {
+ 
+       message.channel.send("Erreur mauvais usage: "+staff+"clearwarns <utilisateur> <nombre>");
+ 
+      }
+ 
+    } else {
+ 
+      message.channel.send("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**");
+ 
+    }
+ 
+  }
 
 ///////////////////////////////////////////////////COMMANDES PV///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -495,6 +755,12 @@ if (message.content.startsWith(prefix + "accept")) {
         .catch(console.error);
     }
     if (message.content === "gueule") {
+        message.reply("Warning !");
+        message.delete()
+        .then(msg => console.log(`Deleted message from ${msg.author.username}`))
+        .catch(console.error);
+    }
+    if (message.content === "couilles") {
         message.reply("Warning !");
         message.delete()
         .then(msg => console.log(`Deleted message from ${msg.author.username}`))
