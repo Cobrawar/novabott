@@ -278,6 +278,9 @@ if (message.content.startsWith(prefix + "accept")) {
         var version_embed = new Discord.RichEmbed()
         .setColor("#40A497")
         .setTitle("Version actuel du serveur [💪NOVA💪] : 2.0")
+
+        message.channel.sendMessage(version_embed);
+        message.delete();
     }
    
 ///////////////////////////////////////////////////COMMANDES STAFF/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
