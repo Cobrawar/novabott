@@ -13,6 +13,7 @@ const bot = new Discord.Client();
 var prefix = ("!");
 var staff = (".");
 var pv =("²")
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -23,9 +24,7 @@ bot.on('message', message => {
         message.reply('Hello');
         console.log('Bot say Hello')
     }
-    if(message.content === "Sa va ?"){
-        message.reply('Oui, et vous ?');
-    }
+    
 });
 
 
@@ -57,36 +56,40 @@ if (message.content.startsWith(prefix + "accept")) {
 
 
 
-
-
 //////////////////////////////////////////////////COMMANDES//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    if (message.content === prefix + "aregles") {
+    if (message.content === prefix + "regles") {
         var aregles_embed = new Discord.RichEmbed()
         .setColor("#FF5733")
 
-         .setTitle("__**A -REGLEMENT GENERALE**__")
-        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le grade de celui-ci)]")
-        .addField("[2. Les provocations, insitations ou manipulations envers n'importe quels membres est totalement **INTERDIT**]")
-        .addField("[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'information personnelle d'autrui **SANS** son accord est **INTERDIT**]")
-        .addField("[4. L'usurpation d'identitée, de menaces (hack, ou autres) est défendus]")
-        .addField("[5. Ne pas tenir de propos religieux, politique et tout sujets à débats]")
-        .addField("[6. Tout contenus (messages, pseudos, liens, vidéos, images, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié] ")
-        .addField("[7. Si un problème entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas ! (Sauf si le problème ce passe sur le serveur)]")
-        .addField("[8. Pour les problèmes : ne pas le résoudres **seul** mais appeler un plus haut grader (Helper, Admin, Modo, DEUS)]")
 
-        .addField("__**B -REGLEMENT SALON TEXTUELS**__")
-        .addField("[1. Le spam, flood, et messages d'inusltes, grossièretées ne sont pas tolérés]")
-        .addField("[2. Ne pas abuser des majuscules !]")
-        .addField("[3. Le partage de musiques (liens) sont autorisés seulement dans le salon musique réservé aux VIP minimum]")
-        .addField("[4. Pas de publicitées (marques, chaînes....), (la mention est autorisée mais pas la pub)]")
-        .addField("[5. Ne pas spammer les commandes des bots]")
-        .addField("[6. Le salon Musique (VIP+) est réservé aux musiques ajouters au bot MUSIQUE, **PAS AILLEURS**] ")
+
+        .addField("LE REGLEMENT CE DOIT D'ETRE VALIDEE A L'ARRIVEE DU SERVEUR ET APPLIQUE SOUS PEINE DE SANCTIONS PROPORTIONELLES !")
+         .setTitle("__**A -REGLEMENT GENERALE**__")
+        .addField("[1. Respecter les différentes personnes du serveur (quelque soit le grade de celui-çi)]")
+        .addField("[2. Les provocations, incitations ou manipulations envers **n'importe** quels membres est totalement **INTERDIT**]",)
+        .addField("[3. D'après la norme de la protection des renseignements personnels, la divulgation publique d'informations personnelles d'autruis **SANS** son accord est **INTERDIT**]",)
+        .addField("[4. L'usurpation d'identitées, de menaces (hack, ou autres) est **défendus**]",)
+        .addField("[5. Ne pas tenir de propos religieux, politique]",)
+        .addField("[6. Tout contenus (messages, pseudos, liens, vidéos, images, etc.) illicites, sexuels, horrifiants, insultants, sexistes, racistes est **interdits**, cependant +18 est autorisé dans le channel 🔞trash🔞]",)
+        .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]",)
+        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]",)
+
+
+
+        .addField("__**B -REGLEMENT SALONS TEXTUELS**__")
+        .addField("[1. Le spam, flood, et messages d'inusltes, grossiertées ne sont pas tolérés]",)
+        .addField("[2. Ne pas **abuser** des majuscules !]",)
+        .addField("[3. Le partage de musiques (liens) sont autorisés **seulement** dans le salon 🎼musique🎼]",)
+        .addField("[4. Pas de publicitées (marques, chaînes....), (la mention est autorisée mais pas la pub)]",)
+        .addField("[5. Ne pas **spammer** les commandes des bots]",)
+        .addField("[6. Le salon 🔑musique🔑 (VIP+) est réservé aux musiques demandées au bot MUSIQUE, **PAS AILLEURS**]",)
+
 
         .addField("__**C -REGLEMENT SALON VOCAUX**__")
-        .addField("[1. Pas de cris, éviter les grésillemnt ou autres bruits dérangants, les modificateurs de voix et soundboard son autorisés dans la **limite** du raisonnable]")
-        .addField("[2. Le changement de channel continu est **INTERDIT**]")
-        .addField("[3. Ne pas diffuser des contenus non appropriés à la règle A-6]")
+        .addField("[1. Pas de cris, évitez les grésillements ou autres bruits dérangants, les modificateurs de voix et autres soundboards son autorisés dans la **limite** du raisonnable]",)
+        .addField("[2. Le changement de channel continu est **INTERDIT**]",)
+        .addField("[3. Ne pas diffuser des contenus non appropriés à la règle A-6]",)
         
         
         message.channel.sendMessage(aregles_embed);
@@ -94,7 +97,7 @@ if (message.content.startsWith(prefix + "accept")) {
 
     }
 
-    if (message.content === prefix + "regles") {
+    if (message.content === prefix + "aregles") {
         var regles_embed = new Discord.RichEmbed()
       .setTitle("**REGLEMENT**")
       .setAuthor("Cobrawar", "")
@@ -106,32 +109,35 @@ if (message.content.startsWith(prefix + "accept")) {
       
     
       .setTimestamp()
+
+      .addField("LE REGLEMENT CE DOIT D'ETRE VALIDEE A L'ARRIVEE DU SERVEUR ET APPLIQUE SOUS PEINE DE SANCTIONS PROPORTIONELLES !")
+
       
-      .addField("__**A -REGLEMENT GENERALE**__",
-        "[1. Respecter les différentes personnes du serveur (quelque soit le garde de celui-ci)]",
-        "[2. Les provocations, insitations ou manipulation envers n'importe quelles membres est totalement **INTERDIT**]",
-        "[3. D'après la norme de la protection des renseignements personnel, la divulgation publique d'informatoin personnelle d'autrui **SANS** son accord est **INTERDIT**]",
-        "[4. L'usurpation d'identité, de menaces (hack, ou autres) est défendues]",
+      .addField("__**A -REGLEMENT GENERALE :**__",
+        "[1. Respecter les différentes personnes du serveur (quelque soit le grade de celui-çi)]",
+        "[2. Les provocations, incitations ou manipulations envers **n'importe** quels membres est totalement **INTERDIT**]",
+        "[3. D'après la norme de la protection des renseignements personnels, la divulgation publique d'informations personnelles d'autruis **SANS** son accord est **INTERDIT**]",
+        "[4. L'usurpation d'identitées, de menaces (hack, ou autres) est **défendus**]",
         "[5. Ne pas tenir de propos religieux, politique]",
-        "[6. Tout contenu (message, pseudo, lien, vidéo, image, etc.) illicite, sexuel, horrifiant, insultant, sexiste, raciste est interdit, cependant +18 est autorisé dans le channel approprié]",
+        "[6. Tout contenus (messages, pseudos, liens, vidéos, images, etc.) illicites, sexuels, horrifiants, insultants, sexistes, racistes est **interdits**, cependant +18 est autorisé dans le channel 🔞trash🔞]",
         "[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]",
         "[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]",
         
     )
      
-      .addField("__**B -REGLEMENT SALON TEXTUELS**__",
+      .addField("__**B -REGLEMENT SALONS TEXTUELS :**__",
       "[1. Le spam, flood, et messages d'inusltes, grossiertées ne sont pas tolérés]",
-      "[2. Ne pas abuser des majuscules !]",
-      "[3. Le partage de musique (lien) sont autorisé seulement dans le salon musique]",
-      "[4. Pas de publicitées (marques, chaînes....), (la mention est autorisé mais pas la pub)]",
-      "[5. Ne pas spammer les commandes des bots]",
-      "[6. Le salon Musique (VIP+) est réservé aux musiques ajouters au bot MUSIQUE, **PAS AILLEURS**]",
+      "[2. Ne pas **abuser** des majuscules !]",
+      "[3. Le partage de musiques (liens) sont autorisés **seulement** dans le salon 🎼musique🎼]",
+      "[4. Pas de publicitées (marques, chaînes....), (la mention est autorisée mais pas la pub)]",
+      "[5. Ne pas **spammer** les commandes des bots]",
+      "[6. Le salon 🔑musique🔑 (VIP+) est réservé aux musiques demandées au bot MUSIQUE, **PAS AILLEURS**]",
 
     
     )
       
-      .addField("__**C -REGLEMENT SALON VOCAUX**__",
-      "[1. Pas de cris, éviter les grésillemnt ou autres bruits dérangants, les modificateurs de voix et soundboard son autorisés dans la **limite** du raisonnable]",
+      .addField("__**C -REGLEMENT SALON VOCAUX :**__",
+      "[1. Pas de cris, évitez les grésillements ou autres bruits dérangants, les modificateurs de voix et autres soundboards son autorisés dans la **limite** du raisonnable]",
       "[2. Le changement de channel continu est **INTERDIT**]",
       "[3. Ne pas diffuser des contenus non appropriés à la règle A-6]",
     
@@ -140,8 +146,8 @@ if (message.content.startsWith(prefix + "accept")) {
 
 
 
-      .addBlankField(true)
       
+    .addBlankField(true)
     
       message.channel.sendMessage(regles_embed);
       
@@ -267,6 +273,12 @@ if (message.content.startsWith(prefix + "accept")) {
         .setColor("#40A497")
         .setTitle("Candidature demandée avec succès ! Postée la ")
     }
+
+    if (message.content === prefix + "version") {
+        var version_embed = new Discord.RichEmbed()
+        .setColor("#40A497")
+        .setTitle("Version actuel du serveur [💪NOVA💪] : 2.0")
+    }
    
 ///////////////////////////////////////////////////COMMANDES STAFF/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -324,6 +336,7 @@ if (message.content.startsWith(prefix + "accept")) {
         if(!message.guild.memeber(client.user).hasPerimission("ADMINISTRATOR")) return message.channel.send("I don't have the permission !");
         message.channel.overwritePermissions(mute, { SEND_MESSAGE: false}).then(member => {
             message.channel.send(`${mute.user.username} is mute !`);
+           
         });
         
         message.delete();
