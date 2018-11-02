@@ -65,7 +65,7 @@ if (message.content.startsWith(prefix + "accept")) {
 
 
 
-        .addField("LE REGLEMENT CE DOIT D'ETRE VALIDEE A L'ARRIVEE DU SERVEUR ET APPLIQUE SOUS PEINE DE SANCTIONS PROPORTIONELLES !")
+        .addField("LE REGLEMENT CE DOIT D'ETRE VALIDEE A L'ARRIVEE DU SERVEUR ET APPLIQUE SOUS PEINE DE SANCTIONS PROPORTIONELLES ! \n")
          .setTitle("__**A -REGLEMENT GENERALE**__")
         .addField("[1. Respecter les différentes personnes du serveur (quelque soit le grade de celui-çi)]")
         .addField("[2. Les provocations, incitations ou manipulations envers **n'importe** quels membres est totalement **INTERDIT**]",)
@@ -74,7 +74,7 @@ if (message.content.startsWith(prefix + "accept")) {
         .addField("[5. Ne pas tenir de propos religieux, politique]",)
         .addField("[6. Tout contenus (messages, pseudos, liens, vidéos, images, etc.) illicites, sexuels, horrifiants, insultants, sexistes, racistes est **interdits**, cependant +18 est autorisé dans le channel 🔞trash🔞]",)
         .addField("[7. Si un problème d'un entre vous et un autre membre du serveur ce déclare, bloquer le mais nous ne n'en occupons pas !]",)
-        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)]",)
+        .addField("[8. Pour les problémes : ne pas le résoudre **seul** mais appeller un plus haut grader (Helper, Admin, Modo, DEUS)] \n",)
 
 
 
@@ -84,7 +84,7 @@ if (message.content.startsWith(prefix + "accept")) {
         .addField("[3. Le partage de musiques (liens) sont autorisés **seulement** dans le salon 🎼musique🎼]",)
         .addField("[4. Pas de publicitées (marques, chaînes....), (la mention est autorisée mais pas la pub)]",)
         .addField("[5. Ne pas **spammer** les commandes des bots]",)
-        .addField("[6. Le salon 🔑musique🔑 (VIP+) est réservé aux musiques demandées au bot MUSIQUE, **PAS AILLEURS**]",)
+        .addField("[6. Le salon 🔑musique🔑 (VIP+) est réservé aux musiques demandées au bot MUSIQUE, **PAS AILLEURS**] \n",)
 
 
         .addField("__**C -REGLEMENT SALON VOCAUX**__")
@@ -170,7 +170,7 @@ if (message.content.startsWith(prefix + "accept")) {
         .addField("9.   !discution")
         .addField("10.  !pt")
         .addField("11.  !candidature")
-        .addField("12.  !version")                                                  //CHG 2.1//
+        .addField("12.  !version")                                                  
         .addField("**Commandes Admin :**")
         .addField("1.   .kick @pseudo  ---> réservé au grade Admin ou plus ")
         .addField("2.   .ban @pseudo  ---> réservé au grade Admin ou plus ")
