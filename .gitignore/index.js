@@ -31,7 +31,7 @@ bot.on('message', message => {
 bot.on('message', message => {
 
     
-    bot.user.setAvatar('./bot.png')
+    bot.user.setAvatar('./bot1.png')
         .then (() => console.log('Avatar succesfull'))
         .catch(console.error)
     bot.user.setGame('Développement')
@@ -57,6 +57,7 @@ if (message.content.startsWith(prefix + "accept")) {
 
 
 //////////////////////////////////////////////////COMMANDES//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     if (message.content === prefix + "regles") {
         var aregles_embed = new Discord.RichEmbed()
@@ -292,7 +293,7 @@ if (message.content.startsWith(prefix + "accept")) {
             return message.channel.send("You need to mention an @user");
         }
         var kick = message.guild.member(message.mentions.users.first());
-        if(!kick) {
+        if(kick) {
             return message.channel.send("I don't know if the user exist");
         }
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")){
@@ -312,7 +313,7 @@ if (message.content.startsWith(prefix + "accept")) {
             return message.channel.send("You need to mention an @user");
         }
         var ban = message.guild.member(message.mentions.users.first());
-        if(!ban) {
+        if(ban) {
             return message.channel.send("I don't know if the user exist");
         }
         if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")){
@@ -325,21 +326,22 @@ if (message.content.startsWith(prefix + "accept")) {
     }
 
     if(message.content.startsWith(staff + "mute")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have the permission !");
+        
+        if(message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have the permission !");
         if(message.mentions.users.size === 0) {
             return message.channel.send("You need to mention an @user");
         }
         var mute = message.guild.member(message.mentions.users.first());
-        if(!mute) {
+        if(mute) {
             return message.channel.send("I don't know if the user exist");
         }
-        if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")){
+        if(message.guild.member(client.user).hasPermission("ADMINISTRATOR")){
             return message.channel.send("I don't have the permission for mute user");
         }
-        if(!message.guild.memeber(client.user).hasPerimission("ADMINISTRATOR")) return message.channel.send("I don't have the permission !");
+        if(message.guild.memeber(client.user).hasPerimission("ADMINISTRATOR")) return message.channel.send("I don't have the permission !");
         message.channel.overwritePermissions(mute, { SEND_MESSAGE: false}).then(member => {
             message.channel.send(`${mute.user.username} is mute !`);
-           
+            
         });
         
         message.delete();
@@ -351,7 +353,7 @@ if (message.content.startsWith(prefix + "accept")) {
             return message.channel.send("You need to mention an @user");
         }
         var mute = message.guild.member(message.mentions.users.first());
-        if(!mute) {
+        if(mute) {
             return message.channel.send("I don't know if the user exist");
         }m
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")){
@@ -371,7 +373,7 @@ if (message.content.startsWith(prefix + "accept")) {
             return message.channel.send("You need to mention an @user");
     }
     var clear = message.guild.member(message.mentions.users.first());
-    if(!clear) {
+    if(clear) {
         return message.channel.send("I don't know if the user exist");
     }
     if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")){
@@ -449,19 +451,19 @@ message.mentions.users.first().send(`:warning: **Warn |** depuis **${message.gui
  
           } else {
  
-            message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+            message.channel.send("Erreur mauvais usage: "+staff+"warn <user> <raison>");
  
           }
  
         } else {
  
-          message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+          message.channel.send("Erreur mauvais usage: "+staff+"warn <user> <raison>");
  
         }
  
       } else {
  
-        message.channel.send("Erreur mauvais usage: "+prefix+"warn <user> <raison>");
+        message.channel.send("Erreur mauvais usage: "+staff+"warn <user> <raison>");
  
       }
  
