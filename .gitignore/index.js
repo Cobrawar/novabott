@@ -274,6 +274,7 @@ if (message.content.startsWith(prefix + "accept")) {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
         .setTitle("Candidature demandée avec succès ! Postée la ")
+        .sendMessage("Candidature demandées par @author")
     }
 
     if (message.content === prefix + "version") {
