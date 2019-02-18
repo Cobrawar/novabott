@@ -274,15 +274,15 @@ if (message.content.startsWith(prefix + "accept")) {
         }
     }
 
-    if (message.content === prefix + "candidature") {
+      if (message.content === prefix + "candidature") {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        .addField("Candidature envoyée")
-        message.author.createDM().then(channel => {
+        /*message.author.createDM().then(channel => {
             channel.send('Candidature envoyée !')
-        })
+        })*/
         .setTitle("Candidature demandée avec succès ! Postée la ")                          //COMMANDE DE CANDIDATUR EA FINIR//
     }
+
 
     if (message.content === prefix + "version") {
         var version_embed = new Discord.RichEmbed()
