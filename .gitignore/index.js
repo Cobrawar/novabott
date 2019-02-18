@@ -31,7 +31,7 @@ bot.on('message', message => {
 bot.on('message', message => {
 
     
-    bot.user.setAvatar('./bot1.jpg')
+    bot.user.setAvatar('./bot1.png')
         .then (() => console.log('Avatar succesfull'))
         .catch(console.error)
     bot.user.setGame('Développement')
@@ -209,11 +209,11 @@ if (message.content.startsWith(prefix + "accept")) {
         var musique_embed = new Discord.RichEmbed()
         .setColor("#40A497")
         .setTitle("Les commandes du bot de musique : (Vous devez être VIP ou plus)")
-        .addField("!join ---> Faire venir le bot dans votre channel")
-        .addField("!leave  ---> Faire partir le bot de votre channel")
-        .addField("! play + (URL) ---> Faire jouer une musique au bot à partir de youtube ! ")
-        .addField("!pause ---> Mettre la musique en pause")
-        .addField("!stop ---> Stopper la musique")
+        .addField("-join ---> Faire venir le bot dans votre channel")
+        .addField("-leave  ---> Faire partir le bot de votre channel")
+        .addField("-play + (URL) ---> Faire jouer une musique au bot à partir de youtube ! ")
+        .addField("-pause ---> Mettre la musique en pause")
+        .addField("-stop ---> Stopper la musique")
         .addField("Proposez des musiques dans le channel musique")
         message.channel.sendMessage(musique_embed);
         message.delete();
@@ -225,13 +225,15 @@ if (message.content.startsWith(prefix + "accept")) {
         .setColor("#40A497")
         .setTitle("Les différents grades du serveur :")
         .setDescription("Augmenter de garde ? : demander une requête à une Administrateur ou plus")
-        .addField("1.   Fondateur : Grade le plus élevé du serveur, tous les droits.")
-        .addField("2.   Administrateur : Fait respecter les règles du serveur et aide les Fondateurs ")     
-        .addField("3.   Modérateur : Règle les soucis entre joueurs et contribut aux respect des règles")     
-        .addField("4.   Helper : Helper : Aide les personnes en difficultés et sert de porte parole")
-        .addField("5.   VIP : Grade de membre supérieur, peut insérer des liens et autres")
-        .addField("6.   Membre : Grade de base du serveur")
-        .addField("7.   Golbute : Grade punit, correspond à un tempban")
+        .addField("1.   [💪 DEUS💪 ] : Grade le plus élevé du serveur, tous les droits.")
+        .addField("2.   [💻ADMINISTRATEUR💻] : Fait respecter les règles du serveur et aide les Fondateurs ")     
+        .addField("3.   [👋 CHEF-HELPER👋 ] : Chef du grade [🤚 HELPER🤚 ]")
+        .addField("4.   [⚙️ MODERATEUR⚙️ ] : Règle les soucis entre joueurs et contribut aux respect des règles")     
+        .addField("5.   [👮🏼 POLICE👮🏼 ] : Même grade que modérateur ")
+        .addField("6.   [🤚 HELPER🤚 ] : Helper : Aide les personnes en difficultés et sert de porte parole")
+        .addField("7.   [🔑 VIP🔑 ] : Grade de membre supérieur, peut insérer des liens et autres")
+        .addField("8.   [MEMBRE] : Grade de base du serveur")
+        .addField("9.   [GOLBUTE] : Grade punit, correspond à un tempban")
         message.channel.sendMessage(grade_embed);
         message.delete();
     }
@@ -262,7 +264,7 @@ if (message.content.startsWith(prefix + "accept")) {
         .setColor("#40A497")
         .setTitle("Plainte")
         .addField("Faites votre plainte")
-        if(message.mentions.users.size === 0) {
+        if(message.mentions.users.size === 0) {                                             //COMMANDE DE PLAINTE A FINIR//
             return message.channel.send("You need to mention an @user");
         }
         if(message.mentions.users.size === 1) {
@@ -273,14 +275,13 @@ if (message.content.startsWith(prefix + "accept")) {
     if (message.content === prefix + "candidature") {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        .setTitle("Candidature demandée avec succès ! Postée la ")
-        .sendMessage("Candidature demandées par @author")
+        .setTitle("Candidature demandée avec succès ! Postée la ")                          //COMMANDE DE CANDIDATUR EA FINIR//
     }
 
     if (message.content === prefix + "version") {
         var version_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        .setTitle("Version actuel du serveur [💪NOVA💪] : 2.0")
+        .setTitle("Version actuel du serveur [💪NOVA💪] : 2.0")                            //VERSION 2.1 --> COMMANDES FINIES// //.setTitle("Version actuel du serveur [💪NOVA💪] : 2.1")//
 
         message.channel.sendMessage(version_embed);
         message.delete();
@@ -290,19 +291,19 @@ if (message.content.startsWith(prefix + "accept")) {
 
     if(message.content.startsWith(staff + "kick")) {
         var kick_embed = new Discord.RichEmbed()
-        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have the permission !");
+        if(!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.channel.send("Vous n'avez pas la permission de kick !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an @user");
+            return message.channel.send("Vous devez mentionner un utilisateur (@user)");
         }
         var kick = message.guild.member(message.mentions.users.first());
         if(kick) {
-            return message.channel.send("I don't know if the user exist");
+            return message.channel.send("Je ne sais pas si cette personne existe");
         }
         if(!message.guild.member(client.user).hasPermission("KICK_MEMBERS")){
-            return message.channel.send("I don't have the permission for kick user");
+            return message.channel.send("Je n'ai pas la permission de kick cette personne !");
         }
         kick.kick().then(member => {
-            message.channel.send(`${member.user.username}  has been kicked by ${message.author.username}`)
+            message.channel.send(`${member.user.username}  HAS BEEN PURIFICATED BY ${message.author.username}`)
         });
         message.channel.sendMessage(kick_embed)
         message.delete();
@@ -310,39 +311,39 @@ if (message.content.startsWith(prefix + "accept")) {
 
 
     if(message.content.startsWith(staff + "ban")) {
-        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("You don't have the permission !");
+        if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.channel.send("Vous n'avez pas la permission de ban !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an @user");
+            return message.channel.send("Vous devez mentionner un utilisateur (@user)");
         }
         var ban = message.guild.member(message.mentions.users.first());
         if(ban) {
-            return message.channel.send("I don't know if the user exist");
+            return message.channel.send("Je ne sais pas si cette personne existe");
         }
         if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")){
-            return message.channel.send("I don't have the permission for ban user");
+            return message.channel.send("Je n'ai pas la permission de ban cette personne !");
         }
         ban.ban().then(member => {
-            message.channel.send(`${member.user.username}  has been banned by ${message.author.username}`)
+            message.channel.send(`${member.user.username}  HAS BEEN HAMMERED BY ${message.author.username}`)
         });
         message.delete();
     }
 
     if(message.content.startsWith(staff + "mute")) {
         
-        if(message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have the permission !");
+        if(message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission de mute !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an @user");
+            return message.channel.send("Vous devez mentionner un utilisateur (@user)");
         }
         var mute = message.guild.member(message.mentions.users.first());
         if(mute) {
-            return message.channel.send("I don't know if the user exist");
+            return message.channel.send("Je ne sais pas si cette personne existe");
         }
         if(message.guild.member(client.user).hasPermission("ADMINISTRATOR")){
-            return message.channel.send("I don't have the permission for mute user");
+            return message.channel.send("Je n'ai pas la permission de mute cette personne !");
         }
         if(message.guild.memeber(client.user).hasPerimission("ADMINISTRATOR")) return message.channel.send("I don't have the permission !");
         message.channel.overwritePermissions(mute, { SEND_MESSAGE: false}).then(member => {
-            message.channel.send(`${mute.user.username} is mute !`);
+            message.channel.send(`${mute.user.username} IS MUTE !`);
             
         });
         
@@ -350,16 +351,16 @@ if (message.content.startsWith(prefix + "accept")) {
     }
 
     if(message.content.startsWith(staff + "unmute")) {
-        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have the permission !");
+        if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return message.channel.send("Vous n'avez pas la permission de unmute !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an @user");
+            return message.channel.send("Vous devez mentionner un utilisateur (@user)");
         }
         var mute = message.guild.member(message.mentions.users.first());
         if(mute) {
-            return message.channel.send("I don't know if the user exist");
+            return message.channel.send("Je ne sais pas si cette personne existe");
         }m
         if(!message.guild.member(client.user).hasPermission("ADMINISTRATOR")){
-            return message.channel.send("I don't have the permission for mute user");
+            return message.channel.send("Je n'ai pas la permission de unmute cette personne !");
         }
         if(!message.guild.memeber(client.user).hasPerimission("ADMINISTRATOR")) return message.channel.send("I don't have the permission !");
         message.channel.overwritePermissions(mute, { SEND_MESSAGE: true}).then(member => {
@@ -386,6 +387,12 @@ if (message.content.startsWith(prefix + "accept")) {
     });
     message.delete();
 }
+
+
+
+
+
+
 
 var fs = require('fs');
  
@@ -834,6 +841,19 @@ bot.on('message', message => {
 });
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 bot.login(process.env.TOKEN);
