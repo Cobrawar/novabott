@@ -38,7 +38,7 @@ bot.on('message', message => {
         .catch(console.error)
 
 
-//////////////////////////////////////////////////NOUVEAU MEMBRES////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////NOUVEAUX MEMBRES////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 if (message.content.startsWith(prefix + "accept")) {
@@ -176,6 +176,7 @@ if (message.content.startsWith(prefix + "accept")) {
         .addField("2.   .ban @pseudo  ---> réservé au grade Admin ou plus ")
         .addField("3.   .mute @pseudo / .unmute @pseudo  ---> réservé au grade Admin ou plus")
         .addField("4.   .clear @pseudo ---> réservé au grade Admin ou plus")
+        .affField("5.   .warns / .seewarns / .deletewarns (@users)")
         
         
         message.channel.sendMessage(help_embed);
@@ -276,15 +277,19 @@ if (message.content.startsWith(prefix + "accept")) {
     if (message.content === prefix + "candidature") {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
+        message.author.createDM().then(channel => {
+            channel.send('Candidature envoyée !')
+        })
         .setTitle("Candidature demandée avec succès ! Postée la ")                          //COMMANDE DE CANDIDATUR EA FINIR//
     }
 
     if (message.content === prefix + "version") {
         var version_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        .setTitle("Version actuel du serveur [💪NOVA💪] : 2.0")                            //VERSION 2.1 --> COMMANDES FINIES// //.setTitle("Version actuel du serveur [💪NOVA💪] : 2.1")//
+        .setTitle("Version actuel du serveur [💪NOVA💪] : **2.0**")                            //VERSION 2.1 --> COMMANDES FINIES// //.setTitle("Version actuel du serveur [💪NOVA💪] : 2.1")//
 
         message.channel.sendMessage(version_embed);
+        
         message.delete();
     }
    
