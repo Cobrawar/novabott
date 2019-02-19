@@ -15,6 +15,20 @@ var staff = (".");
 var pv =("²")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*static void UpdatePresence()
+{
+    DiscordRichPresence discordPresence;
+    memset(&discordPresence, 0, sizeof(discordPresence));
+    discordPresence.state = "Codage";
+    discordPresence.details = "VisualStudioCode";
+    discordPresence.smallImageText = "THOR";
+    discordPresence.partyId = "ae488379-351d-44f-ad32-2b9b01c91657";
+    discordPresence.partySize = 5;
+    discordPresence.partyMax = 5;
+    discordPresence.spectateSecret = "MTIzNDV8MTIzNDV8MTMyNDU0";
+    discordPresence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";
+    Discord_UpdatePresence(&discordPresence);
+}*/
 
 
 bot.on('message', message => {
@@ -276,10 +290,10 @@ if (message.content.startsWith(prefix + "accept")) {
     if (message.content === prefix + "candidature") {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-       /* message.author.createDM().then(channel => {
+        /*message.author.createDM().then(channel => {
             channel.send('Candidature envoyée !')
         })*/
-        .setTitle("Candidature demandée avec succès ! Postée la ")  
+        .setTitle("Candidature demandée avec succès ! Postée la ")     
         
         message.channel.sendMessage(candidature_embed);
         message.delete();                                                            //COMMANDE DE CANDIDATUR EA FINIR//
@@ -296,6 +310,26 @@ if (message.content.startsWith(prefix + "accept")) {
     }
    
 ///////////////////////////////////////////////////COMMANDES STAFF/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    if (message.content === staff + "commandes") {
+        var commandes_embed = new Discord.RichEmbed()
+        .setColor("#40A497")
+        .setTitle("**Les commandes de modérations :**")
+        .addField("1.   .mute @pseudo // .unmute @pseudo ---> Permet de restreindre la parole ou de la lui redonner")
+        .addField("2.   .kick @pseudo ---> Permet de éjecter une personne du serveur")
+        .addField("3.   .ban @pseudo ---> Permet de bannir un membre du serveur ")
+        .addField("4.   .clear @pseudo ---> Permet de clear une personne")
+        .addField("5.   .warn @pseudo + (cause) // .seewarns @pseudo // .deletewarns @pseudo + (warn)// .clearwarns @pseudo + (nombre)")
+        message.channel.sendMessage(commandes_embed);
+        message.delete();
+    }
+
+
+
+
+
+
+
 
     if(message.content.startsWith(staff + "kick")) {
         var kick_embed = new Discord.RichEmbed()
@@ -379,19 +413,19 @@ if (message.content.startsWith(prefix + "accept")) {
     }
 
     if(message.content.startsWith(staff + "clear")) {
-        if(!message.guild.member(message.author).hasPermission("CLEAR_MEMBERS")) return message.channel.send("You don't have the permission !");
+        if(!message.guild.member(message.author).hasPermission("CLEAR_MEMBERS")) return message.channel.send("Vous n'avez pas la permission de clear !");
         if(message.mentions.users.size === 0) {
-            return message.channel.send("You need to mention an @user");
+            return message.channel.send("Vous devez mentionner un utilisateur (@user)");
     }
     var clear = message.guild.member(message.mentions.users.first());
     if(clear) {
-        return message.channel.send("I don't know if the user exist");
+        return message.channel.send("Je ne sais pas si cette personne existe");
     }
     if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")){
-        return message.channel.send("I don't have the permission for mute user");
+        return message.channel.send("Je n'ai pas la permission de clear cette personne !");
     }
     clear.clear().then(member => {
-        message.channel.send(`${member.user.username}  has been clear by ${message.author.username}`)
+        message.channel.send(`${member.user.username}  HAS BEEN CLEARED ${message.author.username}`)
     });
     message.delete();
 }
@@ -570,7 +604,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
  
  
  
-  if (message.content.startsWith(staff+"deletewarns")||message.content===prefix+"deletewarns") {
+  if (message.content.startsWith(staff+"deletewarns")) {
  
 if (message.channel.type === "dm") return;
  
