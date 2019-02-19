@@ -276,9 +276,9 @@ if (message.content.startsWith(prefix + "accept")) {
     if (message.content === prefix + "candidature") {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        /*message.author.createDM().then(channel => {
+        message.author.createDM().then(channel => {
             channel.send('Candidature envoyée !')
-        })*/
+        })
         .setTitle("Candidature demandée avec succès ! Postée la ")     
         
         message.channel.sendMessage(candidature_embed);
