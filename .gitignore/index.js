@@ -184,12 +184,8 @@ if (message.content.startsWith(prefix + "accept")) {
         .addField("10.  !pt")
         .addField("11.  !candidature")
         .addField("12.  !version")                                                  
-        .addField("**Commandes Admin :**")
-        .addField("1.   .kick @pseudo  ---> réservé au grade Admin ou plus ")
-        .addField("2.   .ban @pseudo  ---> réservé au grade Admin ou plus ")
-        .addField("3.   .mute @pseudo / .unmute @pseudo  ---> réservé au grade Admin ou plus")
-        .addField("4.   .clear @pseudo ---> réservé au grade Admin ou plus")
-        .addField("5.   .warns / .seewarns / .deletewarns (@users)")
+       
+
         
         
         message.channel.sendMessage(help_embed);
@@ -313,6 +309,7 @@ if (message.content.startsWith(prefix + "accept")) {
 
     if (message.content === staff + "commandes") {
         var commandes_embed = new Discord.RichEmbed()
+        
         .setColor("#40A497")
         .setTitle("**Les commandes de modérations :**")
         .addField("1.   .mute @pseudo // .unmute @pseudo ---> Permet de restreindre la parole ou de la lui redonner")
