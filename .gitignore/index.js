@@ -15,20 +15,6 @@ var staff = (".");
 var pv =("²")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-static void UpdatePresence()
-{
-    DiscordRichPresence discordPresence;
-    memset(&discordPresence, 0, sizeof(discordPresence));
-    discordPresence.state = "Codage";
-    discordPresence.details = "VisualStudioCode";
-    discordPresence.smallImageText = "THOR";
-    discordPresence.partyId = "ae488379-351d-44f-ad32-2b9b01c91657";
-    discordPresence.partySize = 5;
-    discordPresence.partyMax = 5;
-    discordPresence.spectateSecret = "MTIzNDV8MTIzNDV8MTMyNDU0";
-    discordPresence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";
-    Discord_UpdatePresence(&discordPresence);
-}
 
 
 bot.on('message', message => {
