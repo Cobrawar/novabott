@@ -15,7 +15,20 @@ var staff = (".");
 var pv =("²")
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+static void UpdatePresence()
+{
+    DiscordRichPresence discordPresence;
+    memset(&discordPresence, 0, sizeof(discordPresence));
+    discordPresence.state = "Codage";
+    discordPresence.details = "VisualStudioCode";
+    discordPresence.smallImageText = "THOR";
+    discordPresence.partyId = "ae488379-351d-44f-ad32-2b9b01c91657";
+    discordPresence.partySize = 5;
+    discordPresence.partyMax = 5;
+    discordPresence.spectateSecret = "MTIzNDV8MTIzNDV8MTMyNDU0";
+    discordPresence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";
+    Discord_UpdatePresence(&discordPresence);
+}
 
 
 bot.on('message', message => {
@@ -34,7 +47,7 @@ bot.on('message', message => {
     bot.user.setAvatar('./bot1.png')
         .then (() => console.log('Avatar succesfull'))
         .catch(console.error)
-    bot.user.setGame('Développement')
+    bot.user.setGame('!help')
         .catch(console.error)
 
 
@@ -176,7 +189,7 @@ if (message.content.startsWith(prefix + "accept")) {
         .addField("2.   .ban @pseudo  ---> réservé au grade Admin ou plus ")
         .addField("3.   .mute @pseudo / .unmute @pseudo  ---> réservé au grade Admin ou plus")
         .addField("4.   .clear @pseudo ---> réservé au grade Admin ou plus")
-        .affField("5.   .warns / .seewarns / .deletewarns (@users)")
+        .addField("5.   .warns / .seewarns / .deletewarns (@users)")
         
         
         message.channel.sendMessage(help_embed);
@@ -274,12 +287,12 @@ if (message.content.startsWith(prefix + "accept")) {
         }
     }
 
-      if (message.content === prefix + "candidature") {
+    if (message.content === prefix + "candidature") {
         var candidature_embed = new Discord.RichEmbed()
         .setColor("#40A497")
-        message.author.createDM().then(channel => {
+        /*message.author.createDM().then(channel => {
             channel.send('Candidature envoyée !')
-        })
+        })*/
         .setTitle("Candidature demandée avec succès ! Postée la ")     
         
         message.channel.sendMessage(candidature_embed);
