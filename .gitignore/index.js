@@ -252,7 +252,7 @@ if (message.content.startsWith(prefix + "accept")) {
         var maj_embed = new Discord.RichEmbed()
         .setColor("#40A497")
         .setTitle("La dernière mise à jour :")
-        .affField("2.0")
+        .affField("3.0")
         //.addField("http://www.mediafire.com/file/4di093tdzn4idqg/Nova+2.0.odt")
         message.channel.sendMessage(maj_embed);
         message.delete();
